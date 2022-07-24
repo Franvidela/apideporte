@@ -2,11 +2,34 @@
   <div id="app">
     <nav>
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/event">EventSport</router-link> |
+      <router-link to="/team">TeamVsTeam</router-link> |
     </nav>
     <router-view/>
   </div>
 </template>
+
+<script>
+
+import {mapActions} from 'vuex'
+export default{
+  data:()=>{
+      return {
+
+      }
+  },
+  components:{
+
+  },
+  methods:{
+      ...mapActions(["getSports"]),
+  },
+  mounted(){
+      this.getSports();
+  }
+
+}
+</script>
 
 <style>
 #app {
